@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generator figurki RPG</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Generator RPG</p>
+          <h1>Stwórz prompt do zdjęcia figurki 3D</h1>
+          <p class="subtitle">
+            Wgraj zdjęcie postaci, opisz ją kilkoma zdaniami i wygeneruj gotowy prompt do ChatGPT.
+          </p>
+        </div>
+      </header>
+
+      <section class="panel">
+        <form id="prompt-form" class="form" autocomplete="off">
+          <div class="field">
+            <label for="image-input">Zdjęcie postaci</label>
+            <input id="image-input" name="image" type="file" accept="image/*" />
+            <p class="hint">Twoje zdjęcie zostaje tylko na tym urządzeniu. Służy jako podgląd.</p>
+          </div>
+
+          <div class="preview" id="image-preview">
+            <span class="preview__placeholder">Brak wgranego zdjęcia</span>
+            <img alt="Podgląd postaci" />
+          </div>
+
+          <div class="field">
+            <label for="description">Opis postaci</label>
+            <textarea
+              id="description"
+              name="description"
+              rows="5"
+              placeholder="Np. elficki łucznik, zielony płaszcz, misterny łuk, spokojne spojrzenie"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="primary">Generuj prompt</button>
+        </form>
+      </section>
+
+      <section class="panel output">
+        <div class="output__header">
+          <h2>Wygenerowany prompt</h2>
+          <button id="copy-button" class="ghost" type="button">Skopiuj</button>
+        </div>
+        <p class="output__hint">
+          Skopiuj prompt i wklej go do ChatGPT wraz z przesłanym zdjęciem, aby otrzymać wizualizację figurki.
+        </p>
+        <div class="output__box" id="output-box">
+          <span class="placeholder">Tutaj pojawi się Twój prompt.</span>
+          <pre id="output-text"></pre>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
